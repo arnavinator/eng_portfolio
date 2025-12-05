@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Arnav's Engineering Portfolio</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./style.css" rel="stylesheet">
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],    // delimiters for inline math
+        displayMath: [['$$', '$$'], ['\\[', '\\]']] // delimiters for display math
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+</head>
+
+
+<body>
+
+  <nav class="navbar navbar-expand-sm navbar-dark">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-5">
+      <h2 class="nav-title">Arnav's Engineering Portfolio</h2>
+      <div class="navbar-nav">
+        <a class="nav-link" href="./index.html">Home</a>
+        <a class="nav-link active" href="./about.html">About Me</a>
+
+        <div class="nav-item dropdown">
+          <!-- now a normal in-page link -->
+          <a
+            class="nav-link"
+            href="./index.html#selected-work"
+            id="projectsDropdown"
+            aria-expanded="false"
+          >
+            Selected Work <span style="margin-left:1px; font-size:0.99em;">▾</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="projectsDropdown" id="dropdown-content"></ul>
+        </div>
+        
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-section-about">
+    <div class="textcontainer">
+
+      <h2 class="oswald-heading">FROM <span style="color: rgb(121, 191, 139);">HARDWARE</span>..... TO <span style="color: rgb(163, 220, 239);">MACHINE LEARNING</span>???</h2>
+  
+    </div>
+  
+  </section>
+
+  <div class="textcontainer">
+
+    <h2 class="oswald-heading">FROM <span style="color: rgb(108, 183, 127);">HARDWARE</span></h3>
+    <p class="mb-1">I am currently a SoC Design Engineer @ Apple.</p>
+    
+    <ul class="ps-3 fs-6 mt-0">
+      <li>I work on low-power high-speed data exchange <u>silicon hardware designs</u> and <u>firmware</u> that goes into all Apple silicon 
+        <br>
+        (iPhone📱, Mac 💻, Watch ⌚, Vision Pro 🥽, other secret stuff...).</li>
+        <li>This hardware is needed whenever you access system memory or use WiFi/Cellular/Bluetooth capabilities in Apple devices (ie make a phone call, 
+          browse the internet, view a photo, use an LLM, etc.)</li>
+    </ul>
+
+    <p>I love my work in silicon design: I get to engineer cutting-edge systems 
+      used by billions of consumers, collaborate with really smart people, and grow as a problem-solver. </p>
+
+    <p>I entered this field because it felt like the most incredible engineering space: silicon designers can move around transistors (a few nanometers tall) and 
+      control the flow of electrons (at the scale of nanoseconds) to create the modern computing infrastructure empowering humanity's flourishing today
+      (from heart monitors to smartphones to data centers). I'm super grateful for the chance to understand these complex systems and grow my systems thinking.</p>
+      <br>
+      
+    <h2 class="oswald-heading">TO <span style="color: rgb(108, 166, 183);">MACHINE LEARNING</span></h3>
+    <p>Over the past year or so, I've developed a passion about the future of Machine Learning and Reinforcement Learning.</p> 
+    <p>While imitation learning enables systems to “watch and repeat” (through pretraining and supervised fine-tuning), RL is 
+      where models grow beyond imitation, providing the framework for agents to discover new behaviors, exceed demonstrations, and 
+      deliver the kind of surprising (almost magical) performance that only emerges through exploration and feedback.</p> 
+    <p>I believe RL will be a key driver of the next leap in intelligent systems and human flourishing. When paired with thoughtful 
+      software-hardware integration, RL-powered systems can learn to perform tasks with SOTA adaptability and efficiency. 
+       I'm excited to help build those learning-first systems.</p>  
+
+  </div>
+
+  <!-- Back-to-Top button -->
+  <div id="backToTop" title="Go to top">  Back to Top ▲  </div>
+  <script>
+    // Get the button
+    const backToTopBtn = document.getElementById('backToTop');
+  
+    // 1) Show/hide button when scrolling
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        // If scrolled more than 300px, show the button
+        backToTopBtn.classList.add('show');
+        backToTopBtn.classList.remove('hide');
+      } else {
+        // Otherwise, hide it
+        backToTopBtn.classList.add('hide');
+        backToTopBtn.classList.remove('show');
+      }
+    });
+  
+    // // scroll to top on hover
+    // backToTopBtn.addEventListener('mouseenter', () => {
+    //   window.scrollTo({ top: 0, behavior: 'smooth' });
+    // });
+
+    // scroll to top on click
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <script>
+    fetch("./dropdown.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("dropdown-content").innerHTML = html;
+      });
+  </script>
+
+</body>
+
+<footer class="footer-bar">
+  <div class="container text-center py-2">
+    <a
+      class="footer-link"
+      href="https://www.linkedin.com/in/arnav-srivastava/"
+      target="_blank"
+      rel="noopener"
+    >
+      <p class="fs-5">
+        Want to get in touch? Reach out to me on LinkedIn
+        <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i>
+      </p>
+    </a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+
+</html>
